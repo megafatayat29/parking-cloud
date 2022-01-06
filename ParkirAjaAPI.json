@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "80fb0b65-c2a9-4773-a35c-d541d87e87f3",
+		"name": "ParkirAjaAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ParkingLotAPI",
+			"item": [
+				{
+					"name": "createParkingLot",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"All You Can Parked\",\n    \"address\": \"Jl. Semua\",\n    \"area\": 1000000,\n    \"capacity\": 150,\n    \"category\": \"All\",\n    \"hourlyParkingFee\": 13000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/parkingLot",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"parkingLot"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getParkingLotById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/parkingLot/8a8ab2a07c1baa83017c1baf2da40004",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"parkingLot",
+								"8a8ab2a07c1baa83017c1baf2da40004"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getVehiclesByParkingLotId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/parkingLot/8a8ab2a07c1baa83017c1baf2da40004/vehicles",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"parkingLot",
+								"8a8ab2a07c1baa83017c1baf2da40004",
+								"vehicles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "exitVehicleFromParkingLot",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/parkingLot/8a8ab2a07c184a17017c184cb8aa0000/vehicles?vehicleId=8a8ab2a07c1b8d28017c1b8daf590000",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"parkingLot",
+								"8a8ab2a07c184a17017c184cb8aa0000",
+								"vehicles"
+							],
+							"query": [
+								{
+									"key": "vehicleId",
+									"value": "8a8ab2a07c1b8d28017c1b8daf590000"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "VehicleAPI",
+			"item": [
+				{
+					"name": "createVehicle",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"plateNumber\": \"Q 6666 RX\",\n    \"type\": \"Motorcycle\",\n    \"parkingLotId\": \"8a8ab2a07c1baa83017c1baf2da40004\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/vehicle",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"vehicle"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
